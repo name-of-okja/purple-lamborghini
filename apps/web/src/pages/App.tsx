@@ -1,6 +1,15 @@
+import { useNavigate } from 'react-router-dom';
+
 function App() {
+  const navigate = useNavigate();
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      navigate('/chat');
+    }
+  };
   return (
-    <div className='h-screen flex flex-col pb-6'>
+    <div className='h-screen flex flex-col pb-6' onKeyDown={handleKeyDown}>
       <div className='h-full flex flex-col justify-center'>
         <div className='-mt-20 max-w-4xl w-full text-center mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='mb-4 flex justify-center items-center'>
