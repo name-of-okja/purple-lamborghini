@@ -1,2 +1,2 @@
-export * from './db';
-export * from './supabase.types';
+export * from './db.js';
+export * from './supabase.types.js';

@@ -2,15 +2,18 @@
   "name": "@repo/supabase",
   "version": "0.0.0",
   "type": "module",
-  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc"
+  },
   "private": true,
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./dist/index.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.4"
   },
   "devDependencies": {
-    "supabase": "^2.22.12"
+    "supabase": "^2.22.12",
+    "@repo/typescript-config": "workspace:*"
   }
 }
