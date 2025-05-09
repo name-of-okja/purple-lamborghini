@@ -1,8 +1,11 @@
 import { createSupabaseClient } from '@repo/supabase';
 import { Hono } from 'hono';
+import { cors } from 'hono/cors';
 import { jwt, sign } from 'hono/jwt';
 
 const app = new Hono<{ Bindings: Bindings }>();
+
+app.use('*', cors());
 
 app.use('/me', async (c, next) => {
   const jwtMiddleware = jwt({

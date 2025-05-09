@@ -1,11 +1,11 @@
 import { Hono } from 'hono';
 import { createSupabaseClient } from '@repo/supabase';
-type Bindings = {
-  SUPABASE_URL: string;
-  SUPABASE_ANON_KEY: string;
-};
+import { cors } from 'hono/cors';
 
 const app = new Hono<{ Bindings: Bindings }>();
+
+app.use('*', cors());
+
 app.get('/', async (c) => {
   const db = createSupabaseClient(c);
   const result = await db.from('event').select('*');
@@ -14,3 +14,8 @@ app.get('/', async (c) => {
 });
 
 export default app;
+
+type Bindings = {
+  SUPABASE_URL: string;
+  SUPABASE_ANON_KEY: string;
+};
