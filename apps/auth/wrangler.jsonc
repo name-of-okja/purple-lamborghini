@@ -1,11 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "event",
+  "name": "auth",
   "main": "src/index.ts",
-  "compatibility_date": "2025-05-08",
+  "compatibility_date": "2025-05-09",
   "dev": {
-    "port": 5001,
+    "port": 5000,
   },
+  "vars": {
+    "JWT_KEY": "thisistest",
+  }
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],

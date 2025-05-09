@@ -1,0 +1,17 @@
+{
+  "name": "auth",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "hono": "^4.7.8",
+    "@repo/supabase": "workspace:*"
+  },
+  "devDependencies": {
+    "wrangler": "^4.4.0",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
+  }
+}
