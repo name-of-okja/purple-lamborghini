@@ -31,12 +31,12 @@ app.post('/login', async (c) => {
       .eq('email', email)
       .single();
 
-    let user: typeof data = null;
+    let user = data;
     if (data == null) {
       const { data, error } = await db
         .from('users')
         .insert({ email })
-        .select()
+        .select('*')
         .single();
       if (error) {
         return c.json({ error: error.message }, 400);
