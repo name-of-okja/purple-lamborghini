@@ -22,6 +22,8 @@ export function ChatBoardSidebar() {
       dark:bg-neutral-900 dark:border-neutral-700'
       role='dialog'
       aria-label='Sidebar'
+      aria-overlay='true'
+      tabIndex={-1}
     >
       <nav className='size-full flex flex-col'>
         <div className='flex flex-col bg-white shadow-2xs rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70'>
